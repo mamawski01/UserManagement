@@ -1,9 +1,0 @@
-npm start
-
-netstat -ano | findstr :7000
-taskkill /F /PID 2432
-
-npm init -y
-npm i express mongoose nodemon csv-parser cors dotenv express-async-handler multer
-open package.json change "start": "node server.js" to "start": "nodemon server.js"
-npm start(to start the server)
