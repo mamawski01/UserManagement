@@ -1,23 +1,33 @@
 import UserTopNav from "../components/userComponents/UserTopNav";
 
 export default function HomePage() {
-  const name = `BukNoy`;
-  if (name) {
-    return (
-      <div>
-        <UserTopNav></UserTopNav>
-        <div className="gap-1 flex m-2 text-blue-900 container">
-          <h1>hello {name} </h1>
-          <input type="text" name="input1" />
-          +
-          <input type="text" name="input2" />
-          =
-          <input type="text" name="output" readOnly />
-        </div>
-        <input type="text" className="bg-red-400" id="grid" />
-      </div>
-    );
-  } else {
-    return <h1 className="gap-1 flex m-2 text-blue-900">Filthy</h1>;
+  var self = 100;
+  self = self - 50;
+  self = self - 50;
+  self = self - 50;
+  var filthy = "ewrwe";
+  {
+    if (filthy) {
+      console.log("filthy animal");
+    } else {
+      console.log("not filthy animal");
+    }
   }
+  console.log(self);
+  return (
+    <div className="">
+      <UserTopNav></UserTopNav>
+      <div className="p-5">
+        <h1>List</h1>
+        <button
+          className=" border border-solid bg-red-400 hover:bg-slate-500 p-2 hover:text-white rounded-full h-full"
+          onClick={null}
+        >
+          click
+        </button>
+        <h1 className="lol">lol</h1>
+        <ul>{null}</ul>
+      </div>
+    </div>
+  );
 }
