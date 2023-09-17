@@ -1,21 +1,7 @@
 import UserTopNav from "../components/userComponents/UserTopNav";
 
-export default function HomePage() {
-  let x = 68;
-  let y = 100;
-  let chmabaNumber1 = 69;
-  let chmabaNumber2 = 101;
-
-  if (x === chmabaNumber1 && y === chmabaNumber2) {
-    console.log("chamba choy");
-    document.getElementsByClassName("lol").innerHTML = "chamba choy";
-  } else if (x === chmabaNumber1 || y === chmabaNumber2) {
-    console.log("chamba isa choy");
-    document.getElementsByClassName("lol").innerHTML = "chamba isa choy";
-  } else {
-    console.log(!"wala2x gid chamba");
-    document.getElementsByClassName("lol").innerHTML = "wala2x gid chamba";
-  }
+function HomePage() {
+  //
 
   return (
     <div className="">
@@ -39,3 +25,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+export default HomePage;
