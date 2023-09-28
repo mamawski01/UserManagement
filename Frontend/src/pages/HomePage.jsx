@@ -1,10 +1,6 @@
 import UserTopNav from "../components/userComponents/UserTopNav";
 
 function HomePage() {
-  //
-  const text = document.querySelector(".lol");
-  text.style.color = "red";
-
   return (
     <div className="">
       <UserTopNav></UserTopNav>
