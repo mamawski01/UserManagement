@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
 
-export default function UserTopNav() {
+const UserTopNav = () => {
   return (
-    <div className=" bg-slate-900 m-3 p-3 text-white font-bold container">
+    <div className=" bg-slate-900  p-1 text-white font-bold container">
       <div className="flex justify-around">
-        <Link to="/">Home</Link>
-        <Link to="/userPut">Update User</Link>
+        <Link to="/" className=" hover:bg-black">
+          Home
+        </Link>
+        <Link to="/userPut" className=" hover:bg-black">
+          Update User
+        </Link>
       </div>
     </div>
   );
-}
+};
+
+export default UserTopNav;

@@ -1,6 +1,6 @@
 import UserTopNav from "../components/userComponents/UserTopNav";
 
-function HomePage() {
+const HomePage = () => {
   return (
     <div className="">
       <UserTopNav></UserTopNav>
@@ -12,6 +12,6 @@ function HomePage() {
       </div>
     </div>
   );
-}
+};
 
 export default HomePage;

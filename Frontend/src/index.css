@@ -4,6 +4,11 @@
 
 @layer base{
     body{
-        @apply bg-gray-400;
+        @apply bg-gray-950;
     }
+    .label{
+        @apply text-gray-400
+    }
+
 }
+
