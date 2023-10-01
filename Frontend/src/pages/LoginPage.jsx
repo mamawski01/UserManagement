@@ -11,18 +11,20 @@ const LoginPage = () => {
 
   return (
     <div className=" flex justify-center flex-col items-center h-screen ">
-      <Link className="flex place-content-stretch" to="/loginPage">
-        <img className=" w-8 h-8" src="/favicon.svg" alt="logo" />
-        <p className="text-white font-semibold text-2xl pl-1">TEC</p>
-      </Link>
-      <div className="flex bg-gray-900 border p-4 m-3  rounded-md border-gray-600 flex-col md:w-80 ">
-        <h1 className=" text-white font-semibold text-2xl mb-3 ">
+      <div className="flex bg-gray-900 border border-gray-700 p-4 m-3  rounded-md  flex-col md:w-80 ">
+        <div className=" flex justify-center">
+          <Link className="flex place-content-stretch" to="/loginPage">
+            <img className=" w-8 h-8" src="/favicon2.svg" alt="logo" />
+            <p className="text-white font-semibold text-2xl pl-1">TEC</p>
+          </Link>
+        </div>
+        <h1 className="flex justify-center text-center text-white font-semibold text-2xl mb-3 ">
           Sign in to your account
         </h1>
         <form onSubmit={handleSubmit}>
           <p className=" text-white text-xs pb-1 ">Your username</p>
           <input
-            className=" rounded-md bg-gray-700 text-white p-2 text-xs w-full mb-4 outline-none border border-gray-600 focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+            className=" rounded-md bg-gray-700/25 text-white p-2 text-xs w-full mb-4 outline-none border border-gray-600 focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
             type="text"
             name="username"
             placeholder="username"
@@ -34,7 +36,7 @@ const LoginPage = () => {
           />
           <p className=" text-white text-xs pb-1">Password</p>
           <input
-            className=" rounded-md bg-gray-700 text-white p-2 text-xs w-full mb-4 outline-none border border-gray-600 focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+            className=" rounded-md bg-gray-700/25 text-white p-2 text-xs w-full mb-4 outline-none border border-gray-600 focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
             type="password"
             name="password"
             placeholder="••••••••"
@@ -61,7 +63,7 @@ const LoginPage = () => {
             </Link>
           </div>
           <button
-            className=" text-white bg-blue-600 text-sm p-2 rounded-lg w-full hover:bg-blue-800 mb-3"
+            className=" text-white bg-gradient-to-bl from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% text-sm p-2 rounded-lg w-full hover:from-pink-500 hover:via-purple-500 hover:to-yellow-500 mb-3"
             type="submit"
           >
             Sign in

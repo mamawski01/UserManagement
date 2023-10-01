@@ -1,24 +1,34 @@
-import { useState } from "react";
-
+// import { useEffect, useState } from "react";
 const RegisterPage = () => {
-  const [count, setCount] = useState(0);
+  // const [name, setName] = useState(["cat", "dog", "cow"]);
+  let admin = false;
 
-  function minusCount() {
-    setCount((count) => count - 1);
-  }
-  function plusCount() {
-    setCount((count) => count + 1);
-  }
-  return (
-    <div className=" text-white p-5">
-      <button className=" border p-2 bg-slate-800" onClick={minusCount}>
-        -
-      </button>
-      <span className=" p-3">{count}</span>
-      <button className=" border p-2 bg-slate-800" onClick={plusCount}>
-        +
-      </button>
-    </div>
+  // const [i, setI] = useState(0);
+
+  // const fx = () => {
+  //   setI(i + 1);
+  // };
+  // useEffect(() => {
+  //   console.log(i);
+  // });
+  // let age = 1;
+  // let name = age < 20 ? "young" : age === 20 ? "same age" : "old";
+  // console.log(name);
+
+  const animals = ["dog", "cat", "goat"];
+
+  animals.map((e) => {
+    return <h1>{e} </h1>;
+  });
+
+  return admin === true ? (
+    <>
+      <h1 className=" text-white">{e} Render Old</h1>
+    </>
+  ) : (
+    <>
+      <h1 className=" text-white">Render young</h1>
+    </>
   );
 };
 
