@@ -6,7 +6,7 @@ const LoginPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username);
+    console.log(username + password);
   };
 
   return (
@@ -21,31 +21,41 @@ const LoginPage = () => {
         <h1 className="flex justify-center text-center  font-semibold text-2xl mb-3 ">
           Sign in to your account
         </h1>
-        <form onSubmit={handleSubmit}>
-          <p className="  text-xs pb-1 ">Your username</p>
-          <input
-            className=" rounded-md bg-gray-700/25  p-2 text-xs w-full mb-4 outline-none border border-gray-600 focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
-            type="text"
-            name="username"
-            placeholder="username"
-            title="Enter your username"
-            autoComplete="off"
-            required
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <p className="  text-xs pb-1">Password</p>
-          <input
-            className=" rounded-md bg-gray-700/25  p-2 text-xs w-full mb-4 outline-none border border-gray-600 focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
-            type="password"
-            name="password"
-            placeholder="••••••••"
-            title="Enter your password"
-            autoSave="off"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+        <form className="grid gap-y-2" onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="username" className="  text-xs pb-1 ">
+              Your username
+            </label>
+            <input
+              className=" "
+              type="text"
+              name="username"
+              id="username"
+              placeholder="username"
+              title="Enter your username"
+              autoComplete="off"
+              required
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="password" className="  text-xs pb-1">
+              Password
+            </label>
+            <input
+              className=" "
+              type="password"
+              name="password"
+              id="password"
+              placeholder="••••••••"
+              title="Enter your password"
+              autoSave="off"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
           <div className="md:flex md:justify-between">
             <div className=" flex items-start pb-1">
               <input
@@ -62,10 +72,7 @@ const LoginPage = () => {
               </p>
             </Link>
           </div>
-          <button
-            className="  bg-gradient-to-bl from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% text-sm p-2 rounded-lg w-full hover:from-pink-500 hover:via-purple-500 hover:to-yellow-500 mb-3"
-            type="submit"
-          >
+          <button className=" font-semibold bg-gradient-to-bl from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% text-sm p-2 rounded-lg w-full hover:from-pink-500 hover:via-purple-500 hover:to-yellow-500">
             Sign in
           </button>
           <div className="sm:flex ">
