@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const RegisterPage = () => {
   return (
     <div className=" flex justify-center h-max items-center text-white">
-      <div className=" m-2 bg-gray-900 border border-gray-700 rounded-md p-4 w-60 sm:w-full  ">
+      <div className=" m-2 bg-gray-900 border border-gray-700 rounded-md p-2 w-60 sm:w-full  ">
         <div className=" flex justify-center">
           <Link className="flex place-content-stretch" to="/loginPage">
             <img className=" w-8 h-8" src="/favicon2.svg" alt="logo" />
@@ -13,11 +13,15 @@ const RegisterPage = () => {
         <h1 className="flex justify-center text-center  font-semibold text-2xl mb-1 ">
           Register an account
         </h1>
+
         <form
-          className="grid gap-2 sm:grid sm:grid-cols-6 lg:grid-cols-8  sm:gap-x-3 "
+          className="grid gap-1 sm:grid sm:grid-cols-6   sm:gap-x-3 "
           action=""
         >
-          <div className="sm:col-span-2">
+          <div className="flex justify-center sm:justify-normal  sm:grid sm:row-span-2 sm:col-span-1 ">
+            <input className=" w-28 p-8 sm:w-full" type="image" />
+          </div>
+          <div className="sm:col-span-2 ">
             <label htmlFor="fullName">Full name</label>
             <input
               className="  "
@@ -59,19 +63,7 @@ const RegisterPage = () => {
               <option value="female">Female</option>
             </select>
           </div>
-          <div className="sm:col-span-1 lg:col-span-2">
-            <label htmlFor="cellphoneNo">Cellphone</label>
-            <input
-              className=" "
-              type="text"
-              name="cellphone-no"
-              id="cellphoneNo"
-              placeholder="Cellphone"
-              title="Enter your Cellphone number"
-              autoComplete="off"
-            />
-          </div>
-          <div className="sm:col-span-1 lg:col-span-2">
+          <div className="sm:col-span-1 ">
             <label htmlFor="IDNo">ID</label>
             <input
               className=" "
@@ -84,17 +76,17 @@ const RegisterPage = () => {
               readOnly
             />
           </div>
-          <div className="sm:col-span-full">
-            <label htmlFor="address">Address</label>
-            <textarea
-              className="  resize-none h-8 focus:h-24 sm:focus:h-16 sm:focus:overflow-hidden overflow-hidden focus:overflow-visible"
+
+          <div className="sm:col-span-1 ">
+            <label htmlFor="cellphoneNo">Cellphone</label>
+            <input
+              className=" "
               type="text"
-              name="address"
-              id="address"
-              placeholder="address"
-              title="Enter your Address"
+              name="cellphone-no"
+              id="cellphoneNo"
+              placeholder="Cellphone"
+              title="Enter your Cellphone number"
               autoComplete="off"
-              required
             />
           </div>
           <div className="sm:col-span-1">
@@ -111,45 +103,24 @@ const RegisterPage = () => {
             />
           </div>
           <div className="sm:col-span-1">
-            <label htmlFor="username">Username</label>
-            <input
+            <label htmlFor="position">Position</label>
+            <select
               className=" "
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Autogenerate"
-              title="Username"
+              type=""
+              name="position"
+              id="position"
+              placeholder=""
+              title="Select your position"
               autoComplete="off"
               required
-              readOnly
-            />
+            >
+              <option value="sales">Sales</option>
+              <option value="cashier">Cashier</option>
+              <option value="stockClerk">Stock Clerk</option>
+              <option value="optometrist">Optometrist</option>
+            </select>
           </div>
-          <div className="sm:col-span-1">
-            <label htmlFor="password">Password</label>
-            <input
-              className=" "
-              type="text"
-              name="username"
-              id="password"
-              placeholder="Password"
-              title="Username"
-              autoComplete="off"
-              required
-            />
-          </div>
-          <div className="sm:col-span-2">
-            <label htmlFor="ConfirmPassword">Confirm Password</label>
-            <input
-              className=" "
-              type="text"
-              name="username"
-              id="ConfirmPassword"
-              placeholder="Confirm Password"
-              title="Username"
-              autoComplete="off"
-              required
-            />
-          </div>
+
           <div className="sm:col-span-1">
             <label htmlFor="SSS">SSS</label>
             <input
@@ -187,6 +158,20 @@ const RegisterPage = () => {
             />
           </div>
           <div className="sm:col-span-1">
+            <label htmlFor="username">Username</label>
+            <input
+              className=" "
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Autogenerate"
+              title="Username"
+              autoComplete="off"
+              required
+              readOnly
+            />
+          </div>
+          <div className="sm:col-span-1">
             <label htmlFor="TIN">TIN</label>
             <input
               className=" "
@@ -198,6 +183,46 @@ const RegisterPage = () => {
               autoComplete="off"
             />
           </div>
+          <div className="sm:col-span-1">
+            <label htmlFor="password">Password</label>
+            <input
+              className=" "
+              type="text"
+              name="username"
+              id="password"
+              placeholder="Password"
+              title="Username"
+              autoComplete="off"
+              required
+            />
+          </div>
+          <div className="sm:col-span-2">
+            <label htmlFor="ConfirmPassword">Confirm Password</label>
+            <input
+              className=" "
+              type="text"
+              name="username"
+              id="ConfirmPassword"
+              placeholder="Confirm Password"
+              title="Username"
+              autoComplete="off"
+              required
+            />
+          </div>
+          <div className="sm:col-span-full ">
+            <label htmlFor="address">Address</label>
+            <textarea
+              className="  resize-none h-8 focus:h-24 sm:focus:h-16 sm:focus:overflow-hidden overflow-hidden focus:overflow-visible"
+              type="text"
+              name="address"
+              id="address"
+              placeholder="address"
+              title="Enter your Address"
+              autoComplete="off"
+              required
+            />
+          </div>
+
           <div className="sm:col-span-2">
             <label htmlFor="nameEmergency">Name of Emergency Person</label>
             <input

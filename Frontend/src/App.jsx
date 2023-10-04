@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import UserPutPage from "./pages/UserPutPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import PracticePage from "./pages/PracticePage";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           path="/registerPage"
           element={<RegisterPage></RegisterPage>}
         ></Route>
+        <Route path="/practice" element={<PracticePage></PracticePage>}></Route>
       </Routes>
     </>
   );
