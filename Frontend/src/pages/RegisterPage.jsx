@@ -18,8 +18,8 @@ const RegisterPage = () => {
           className="grid gap-1 sm:grid sm:grid-cols-6   sm:gap-x-3 "
           action=""
         >
-          <div className="flex justify-center sm:justify-normal  sm:grid sm:row-span-2 sm:col-span-1 ">
-            <input className=" w-28 p-8 sm:w-full" type="image" />
+          <div className="flex mx-auto justify-center sm:justify-normal   sm:grid sm:row-span-2 sm:col-span-1  sm:mt-3 lg:w-32   lg:mt-3 ">
+            <input className="px-6 py-9 sm:py-9 sm:px-9 " type="image" />
           </div>
           <div className="sm:col-span-2 ">
             <label htmlFor="fullName">Full name</label>
