@@ -1,17 +1,48 @@
 import { useState } from "react";
+
 const PracticePage = () => {
-  let [textColor, setTextColor] = useState("green");
+  const [task, setTask] = useState("");
+  const [taskList, setTaskList] = useState([]);
 
   return (
-    <div className=" text-white">
-      <h1 style={{ color: textColor }}>BukNoy</h1>
+    <div className="text-white flex-col">
+      <input
+        type="text"
+        onChange={(e) => {
+          setTask(e.target.value);
+        }}
+      />
       <button
         onClick={() => {
-          setTextColor(textColor === "green" ? "violet" : "green");
+          const newTask = {
+            id:
+              taskList.length === 0 ? 1 : taskList[taskList.length - 1].id + 1,
+            taskName: task,
+          };
+          setTaskList([newTask, ...taskList]);
         }}
       >
-        click
+        add task
       </button>
+      <div>
+        {taskList.map((v, k) => {
+          return (
+            <div className="flex gap-x-3" key={k}>
+              <p>
+                {v.taskName}
+                {v.id}
+              </p>
+              <button
+                onClick={() => {
+                  setTaskList((e) => e.filter((e) => (e === v ? false : true)));
+                }}
+              >
+                x
+              </button>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
