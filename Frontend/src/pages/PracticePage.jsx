@@ -1,43 +1,64 @@
 import { useState } from "react";
 
 const PracticePage = () => {
-  const [task, setTask] = useState("");
+  const [newTask, setNewTask] = useState("");
   const [taskList, setTaskList] = useState([]);
+  const [id, setId] = useState(0);
+
+  const addTask = (e) => {
+    setNewTask(e.target.value);
+  };
+  const addTaskList = () => {
+    const newTaskWithID = {
+      id: id,
+      name: newTask,
+      done: false,
+    };
+    setId(id + 1);
+    setTaskList([newTaskWithID, ...taskList]);
+  };
+
+  const deleteShit = (id) => {
+    setTaskList(
+      taskList.filter((v) => {
+        return v.id === id ? false : true;
+      })
+    );
+  };
+
+  const finish = (id) => {
+    setTaskList(
+      taskList.map((v) => {
+        return v.id === id ? { ...v, done: true } : v;
+      })
+    );
+  };
 
   return (
-    <div className="text-white flex-col">
-      <input
-        type="text"
-        onChange={(e) => {
-          setTask(e.target.value);
-        }}
-      />
-      <button
-        onClick={() => {
-          const newTask = {
-            id:
-              taskList.length === 0 ? 1 : taskList[taskList.length - 1].id + 1,
-            taskName: task,
-          };
-          setTaskList([newTask, ...taskList]);
-        }}
-      >
-        add task
-      </button>
-      <div>
+    <div className=" text-white flex-col">
+      <input type="text" name="" id="" onChange={addTask} />
+      <button onClick={addTaskList}>add task</button>
+      <div className="">
         {taskList.map((v, k) => {
           return (
-            <div className="flex gap-x-3" key={k}>
-              <p>
-                {v.taskName}
-                {v.id}
+            <div className=" flex gap-x-3" key={k}>
+              <p style={{ backgroundColor: v.done ? "green" : "inherit" }}>
+                {v.name}
               </p>
+              <p> {v.id}</p>
               <button
                 onClick={() => {
-                  setTaskList((e) => e.filter((e) => (e === v ? false : true)));
+                  deleteShit(v.id);
                 }}
               >
                 x
+              </button>
+              <button
+                onClick={() => {
+                  finish(v.id);
+                }}
+              >
+                done
               </button>
             </div>
           );
