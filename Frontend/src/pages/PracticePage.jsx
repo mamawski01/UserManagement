@@ -1,66 +1,53 @@
 import { useState } from "react";
-
+import User from "../components/User";
 const PracticePage = () => {
   const [newTask, setNewTask] = useState("");
   const [taskList, setTaskList] = useState([]);
-  const [id, setId] = useState(0);
 
-  const addTask = (e) => {
-    setNewTask(e.target.value);
+  const inputTask = (event) => {
+    setNewTask(event.target.value);
   };
-  const addTaskList = () => {
-    const newTaskWithID = {
-      id: id,
+  const addTask = () => {
+    const newTaskWithId = {
+      id: taskList.length === 0 ? 0 : taskList[taskList.length - 1].id + 1,
       name: newTask,
       done: false,
     };
-    setId(id + 1);
-    setTaskList([newTaskWithID, ...taskList]);
+    setTaskList([...taskList, newTaskWithId]);
   };
-
-  const deleteShit = (id) => {
+  const deleteTask = (id) => {
     setTaskList(
       taskList.filter((v) => {
         return v.id === id ? false : true;
       })
     );
   };
-
-  const finish = (id) => {
+  const completeTask = (id) => {
     setTaskList(
       taskList.map((v) => {
-        return v.id === id ? { ...v, done: true } : v;
+        return v.id === id ? { ...v, done: v.done ? false : true } : v;
       })
     );
   };
 
   return (
-    <div className=" text-white flex-col">
-      <input type="text" name="" id="" onChange={addTask} />
-      <button onClick={addTaskList}>add task</button>
+    <div className=" text-white">
+      <input onChange={inputTask} type="text" />
+      <div className=" flex gap-x-3">
+        <button onClick={addTask}>click</button>
+        {newTask}
+      </div>
       <div className="">
         {taskList.map((v, k) => {
           return (
-            <div className=" flex gap-x-3" key={k}>
-              <p style={{ backgroundColor: v.done ? "green" : "inherit" }}>
-                {v.name}
-              </p>
-              <p> {v.id}</p>
-              <button
-                onClick={() => {
-                  deleteShit(v.id);
-                }}
-              >
-                x
-              </button>
-              <button
-                onClick={() => {
-                  finish(v.id);
-                }}
-              >
-                done
-              </button>
-            </div>
+            <User
+              key={k}
+              done={v.done}
+              name={v.name}
+              id={v.id}
+              deleteTask={deleteTask}
+              completeTask={completeTask}
+            ></User>
           );
         })}
       </div>
