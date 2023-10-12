@@ -1,16 +1,23 @@
-const PracticePage = () => {
-  const p = new Promise((fullFilled, notFullFilled) => {
-    let a = 1 + 1;
-    a == 2 ? fullFilled("success") : notFullFilled("failed");
-  });
+import Axios from "axios";
+import { useEffect, useState } from "react";
 
-  p.then((message) => {
-    console.log("this is in the then " + message);
-  });
+const PracticePage = () => {
+  const [catFact, setCatFact] = useState("");
+
+  const fetchCatFact = () => {
+    Axios.get("https://catfact.ninja/fact").then((res) => {
+      setCatFact(res.data.fact);
+    });
+  };
+
+  useEffect(() => {
+    fetchCatFact();
+  }, []);
+
   return (
     <div className=" text-white">
-      <button> Generate cat ../..</button>
-      <div className=""></div>
+      <button onClick={fetchCatFact}>cat fact</button>
+      <p>{catFact}</p>
     </div>
   );
 };
