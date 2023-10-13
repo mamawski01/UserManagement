@@ -1,9 +1,35 @@
-const User = () => {
+const User = (props) => {
   return (
-    <div className=" text-violet-500">
-      <div className="">lol</div>
+    <div className="flex gap-x-3">
+      <p>{props.name}</p>
+      <p>{props.id}</p>
+      <p
+        style={
+          props.done
+            ? { backgroundColor: "green" }
+            : { backgroundColor: "inherit" }
+        }
+      >
+        {props.done.toString()}
+      </p>
+      <button
+        onClick={() => {
+          props.deleteTask(props.id);
+        }}
+      >
+        x
+      </button>
+      <button
+        onClick={() => {
+          props.taskDone(props.id);
+        }}
+      >
+        done
+      </button>
     </div>
   );
 };
+
+User.propTypes;
 
 export default User;
