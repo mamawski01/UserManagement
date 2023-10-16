@@ -1,17 +1,23 @@
 import { useState } from "react";
 
 const Call = () => {
-  const [show, setShow] = useState(false);
+  const [PHPValue, setPHPValue] = useState(0);
 
-  const reveal = () => {
-    setShow(!show);
+  const convertToUSD = () => {
+    setPHPValue(PHPValue * 0.0176);
   };
 
   return (
     <div className=" text-white">
-      <div className="">
-        {show ? "visible" : ""}
-        <button onClick={reveal}> click</button>
+      <div className=" w-56">
+        <input
+          type="text"
+          onChange={(event) => {
+            setPHPValue(event.target.value);
+          }}
+        />
+        <button onClick={convertToUSD}>to USD</button>
+        <input type="text" readOnly value={PHPValue} />
       </div>
     </div>
   );
